@@ -100,8 +100,16 @@
       </div>
     </nav>
     <div
-      class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+      class="max-w-5xl mx-auto mt-6 relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default p-4"
     >
+      <div class="flex justify-center mb-4">
+        <a
+          href="Alumnos"
+          class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-block"
+        >
+          Agregar
+        </a>
+      </div>
       <table class="w-full text-sm text-left rtl:text-right text-body">
         <thead
           class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium"
@@ -117,28 +125,36 @@
         </thead>
 
         <tbody>
-          {% for a in alumno %}
+          {% for alum in alumno %}
           <tr
             class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium"
           >
-            <td class="px-6 py-4">{{ a.id }}</td>
-            <td class="px-6 py-4">{{ a.nombre }}</td>
-            <td class="px-6 py-4">{{ a.apaterno }}</td>
-            <td class="px-6 py-4">{{ a.email }}</td>
-            <td class="px-6 py-4">{{ a.created_date }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <button
-                type="submit"
-                class="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            <td class="px-6 py-4">{{ alum.id }}</td>
+            <td class="px-6 py-4">{{ alum.nombre }}</td>
+            <td class="px-6 py-4">{{ alum.apaterno }}</td>
+            <td class="px-6 py-4">{{ alum.email }}</td>
+            <td class="px-6 py-4">{{ alum.created_date }}</td>
+            <td class="px-6 py-4 whitespace-nowrap space-x-2">
+              <a
+                href=""
+                class="text-white bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg text-sm"
               >
-                Actualizar
-              </button>
-              <button
-                type="submit"
-                class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                Editar
+              </a>
+
+              <a
+                href=""
+                class="text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm"
               >
                 Eliminar
-              </button>
+              </a>
+
+              <a
+                href="detalles?id={{ alum.id}}"
+                class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm"
+              >
+                Detalles
+              </a>
             </td>
           </tr>
           {% endfor %}
