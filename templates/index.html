@@ -117,8 +117,9 @@
           <tr>
             <th class="px-6 py-3 font-medium">ID</th>
             <th class="px-6 py-3 font-medium">Nombre</th>
-            <th class="px-6 py-3 font-medium">Apellido</th>
+            <th class="px-6 py-3 font-medium">Apellidos</th>
             <th class="px-6 py-3 font-medium">Email</th>
+            <th class="px-6 py-3 font-medium">Teléfono</th>
             <th class="px-6 py-3 font-medium">Fecha</th>
             <th class="px-6 py-3 font-medium">Acciones</th>
           </tr>
@@ -131,24 +132,24 @@
           >
             <td class="px-6 py-4">{{ alum.id }}</td>
             <td class="px-6 py-4">{{ alum.nombre }}</td>
-            <td class="px-6 py-4">{{ alum.apaterno }}</td>
+            <td class="px-6 py-4">{{ alum.apellidos }}</td>
             <td class="px-6 py-4">{{ alum.email }}</td>
+            <td class="px-6 py-4">{{ alum.telefono }}</td>
             <td class="px-6 py-4">{{ alum.created_date }}</td>
             <td class="px-6 py-4 whitespace-nowrap space-x-2">
               <a
-                href=""
+                href="modificar?id={{ alum.id}}"
                 class="text-white bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg text-sm"
               >
                 Editar
               </a>
 
               <a
-                href=""
+                href="eliminar?id={{ alum.id}}"
                 class="text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm"
               >
                 Eliminar
               </a>
-
               <a
                 href="detalles?id={{ alum.id}}"
                 class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm"
