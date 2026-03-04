@@ -72,10 +72,13 @@
       <h3 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white">
         Correo: {{email}}
       </h3>
+      <h3 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white">
+        Especialidad: {{especialidad}}
+      </h3>
 
       <span class="text-sm text-body">Visual Designer</span>
       <a
-        href="index"
+        href="{{ url_for('maestros.lista_maestros') }}"
         class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-block"
       >
         Regresar

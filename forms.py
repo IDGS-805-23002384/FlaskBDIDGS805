@@ -12,6 +12,13 @@ class UserForm(Form):
             validators.NumberRange(min=100, max=1000, message="Ingrese valor válido"),
         ],
     )
+    matricula = IntegerField(
+        "matricula",
+        [
+            validators.DataRequired(message="El campo es requerido"),
+            validators.NumberRange(min=100, max=1000, message="Ingrese valor válido"),
+        ],
+    )
     nombre = StringField(
         "Nombre",
         [
@@ -36,10 +43,17 @@ class UserForm(Form):
             validators.Email(message="Ingresa correo valido"),
         ],
     )
-    telefono = EmailField(
+    telefono = StringField(
         "Teléfono",
         [
             validators.DataRequired(message="El campo es requerido"),
             validators.Email(message="Ingresa correo valido"),
+        ],
+    )
+    especialidad = StringField(
+        "Especialidad",
+        [
+            validators.DataRequired(message="El campo es requerido"),
+            validators.DataRequired(message="Ingresa correo valido"),
         ],
     )
