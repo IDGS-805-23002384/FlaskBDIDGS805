@@ -9,7 +9,7 @@ from models import db, Maestros
 #     return f"Perfil de {nombre}"
 
 
-@maestros.route("/maestros", methods=["GET", "POST"])
+@maestros.route("/maestros/maestros", methods=["GET", "POST"])
 def lista_maestros():
     create_form = forms.UserForm(request.form)
     maestros = Maestros.query.all()
@@ -18,7 +18,7 @@ def lista_maestros():
     )
 
 
-@maestros.route("/maestrosA", methods=["GET", "POST"])
+@maestros.route("/maestros/maestrosA", methods=["GET", "POST"])
 def maestros_a():
     create_form = forms.UserForm(request.form)
 
@@ -35,7 +35,7 @@ def maestros_a():
     return render_template("maestros/maestros_a.html", form=create_form)
 
 
-@maestros.route("/detalles_a", methods=["GET", "POST"])
+@maestros.route("/maestros/detalles_a", methods=["GET", "POST"])
 def detalles_a():
     if request.method == "GET":
         matricula = request.args.get("matricula")
@@ -58,7 +58,7 @@ def detalles_a():
     )
 
 
-@maestros.route("/modificar_a", methods=["GET", "POST"])
+@maestros.route("/maestros/modificar_a", methods=["GET", "POST"])
 def modificar_a():
     create_form = forms.UserForm(request.form)
     if request.method == "GET":
@@ -88,7 +88,7 @@ def modificar_a():
     return render_template("maestros/modificarMest.html", form=create_form)
 
 
-@maestros.route("/eliminar_a", methods=["GET", "POST"])
+@maestros.route("/maestros/eliminar_a", methods=["GET", "POST"])
 def eliminar_a():
     create_form = forms.UserForm(request.form)
     if request.method == "GET":

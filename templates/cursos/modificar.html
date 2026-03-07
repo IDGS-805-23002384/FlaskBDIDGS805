@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block container %} {% import "_macros.html" as
+macro %}
+
+<form action="" method="post" novalidate class="max-w-md mx-auto">
+  {{ form.csrf_token }}
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  {{ form.id }}
+
+  <div class="relative z-0 w-full mb-5 group">
+    {{ macro.camposNuevos(form.nombre, class="block py-2.5 px-0 w-full text-sm
+    text-heading bg-transparent border-0 border-b-2 border-default-medium
+    appearance-none focus:outline-none focus:ring-0 focus:border-brand peer") }}
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <label class="block text-sm font-medium text-heading mb-2"
+      >Descripción</label
+    >
+    {{ form.descripcion(class="block py-2.5 px-0 w-full text-sm text-heading
+    bg-transparent border-0 border-b-2 border-default-medium appearance-none
+    focus:outline-none focus:ring-0 focus:border-brand peer", rows="4") }}
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <label class="block text-sm font-medium text-heading mb-2">Maestro</label>
+    {{ form.maestro_id(class="bg-neutral-secondary-soft border
+    border-default-medium text-heading text-sm rounded-lg focus:ring-brand
+    focus:border-brand block w-full p-2.5") }}
+  </div>
+
+  <div class="flex justify-center space-x-4">
+    <button
+      type="submit"
+      class="text-white bg-success box-border border border-transparent hover:bg-success-strong focus:ring-4 focus:ring-success-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+    >
+      Guardar Cambios
+    </button>
+    <a
+      href="{{ url_for('cursos.lista_cursos') }}"
+      class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
+    >
+      Cancelar
+    </a>
+  </div>
+</form>
+{% endblock %}

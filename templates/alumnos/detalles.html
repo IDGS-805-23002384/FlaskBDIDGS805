@@ -9,7 +9,6 @@
         src="{{ url_for('static', filename='img/usuario.png') }}"
         alt="Bonnie image"
       />
-
       <h5 class="mb-0.5 text-2xl font-semibold tracking-tight text-heading">
         {{nombre}} {{apellidos}}
       </h5>
@@ -17,11 +16,11 @@
         Correo: {{email}}
       </h3>
       <h3 class="mb-2 text-lg tracking-tight text-gray-900 dark:text-white">
-        Especialidad: {{especialidad}}
+        Teléfono: {{telefono}}
       </h3>
 
       <a
-        href="{{ url_for('maestros.lista_maestros') }}"
+        href="{{ url_for('alumnos.alumnos_a') }}"
         class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-block"
       >
         Regresar

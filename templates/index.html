@@ -9,6 +9,30 @@
       rel="stylesheet"
       href="{{url_for('static',filename='dist/output.css')}}"
     />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
+      }
+
+      .container-principal {
+        text-align: center;
+        margin-top: 120px;
+      }
+
+      .container-principal h1 {
+        font-size: 42px;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+
+      .container-principal p {
+        font-size: 18px;
+        color: #374151;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,7 +44,7 @@
       >
         <a href="#" class="flex items-center">
           <img
-            src="{{url_for('static',filename='img/IDGS805.png')}}"
+            src="{{url_for('static',filename='img/ultlogo.png')}}"
             class="rounded-2xl h-6 mr-3 sm:h-9"
             alt="Flowbite Logo"
           />
@@ -29,36 +53,7 @@
             >Flask IDGS</span
           >
         </a>
-        <div class="flex md:order-2">
-          <button
-            type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Get started
-          </button>
-          <button
-            data-collapse-toggle="navbar-cta"
-            type="button"
-            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-cta"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
+        <div class="flex md:order-2"></div>
         <div
           class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-cta"
@@ -68,103 +63,35 @@
           >
             <li>
               <a
-                href="#"
+                href="{{ url_for('alumnos.alumnos_a') }}"
                 class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                 aria-current="page"
-                >Home</a
+                >Alumnos</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="{{ url_for('maestros.lista_maestros') }}"
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >About</a
+                >Maestros</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="{{ url_for('cursos.lista_cursos') }}"
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Services</a
+                >Cursos</a
               >
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Contact</a
-              >
-            </li>
+            <li></li>
           </ul>
         </div>
       </div>
     </nav>
 
-
-
-    
-    <div
-      class="max-w-5xl mx-auto mt-6 relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default p-4"
-    >
-      <div class="flex justify-center mb-4">
-        <a
-          href="Alumnos"
-          class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-block"
-        >
-          Agregar
-        </a>
-      </div>
-      <table class="w-full text-sm text-left rtl:text-right text-body">
-        <thead
-          class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium"
-        >
-          <tr>
-            <th class="px-6 py-3 font-medium">ID</th>
-            <th class="px-6 py-3 font-medium">Nombre</th>
-            <th class="px-6 py-3 font-medium">Apellidos</th>
-            <th class="px-6 py-3 font-medium">Email</th>
-            <th class="px-6 py-3 font-medium">Teléfono</th>
-            <th class="px-6 py-3 font-medium">Fecha</th>
-            <th class="px-6 py-3 font-medium">Acciones</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {% for alum in alumno %}
-          <tr
-            class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium"
-          >
-            <td class="px-6 py-4">{{ alum.id }}</td>
-            <td class="px-6 py-4">{{ alum.nombre }}</td>
-            <td class="px-6 py-4">{{ alum.apellidos }}</td>
-            <td class="px-6 py-4">{{ alum.email }}</td>
-            <td class="px-6 py-4">{{ alum.telefono }}</td>
-            <td class="px-6 py-4">{{ alum.created_date }}</td>
-            <td class="px-6 py-4 whitespace-nowrap space-x-2">
-              <a
-                href="modificar?id={{ alum.id}}"
-                class="text-white bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg text-sm"
-              >
-                Editar
-              </a>
-
-              <a
-                href="eliminar?id={{ alum.id}}"
-                class="text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm"
-              >
-                Eliminar
-              </a>
-              <a
-                href="detalles?id={{ alum.id}}"
-                class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm"
-              >
-                Detalles
-              </a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+    <div class="container-principal">
+      <h1>¡Bienvenido!</h1>
+      <p>Sistema de Gestión Escolar</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>

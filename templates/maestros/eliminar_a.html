@@ -3,6 +3,7 @@ as macro %}
 
 <form action="" method="post" novalidate class="max-w-md mx-auto">
     {{ form.csrf_token }}
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" >
 
   <div class="relative z-0 w-full mb-5 group">
     {{ macro.camposNuevos(form.matricula, class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer", readonly="readonly" ) }}
