@@ -61,3 +61,10 @@ class Inscripcion(db.Model):
     __table_args__ = (
         db.UniqueConstraint("alumno_id", "curso_id", name="uq_alumno_curso"),
     )
+
+# (.env) C:\IDGS805\FlaskBDIDGS805>flask db init 
+# inicializar migraciones
+
+# flask db migrate -m "Crear tabla Alumnos"
+
+# flask db upgrade

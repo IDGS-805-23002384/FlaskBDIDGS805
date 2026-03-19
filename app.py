@@ -18,7 +18,7 @@ app.register_blueprint(alumnos)
 app.register_blueprint(maestros)
 app.register_blueprint(cursos)
 
-
+ 
 @app.route("/")
 def index():
     return render_template("index.html")
